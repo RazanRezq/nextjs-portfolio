@@ -1,10 +1,9 @@
+import Hero from '../components/Hero';
 export default function Home() {
   return (
-    <main>
-      <div>
-        <h1 className="relative">
-          Hello Portfolio this is a new project using next js
-        </h1>
+    <main className="relative mx-auto flex flex-col items-center justify-center overflow-hidden bg-black-100 px-5 text-white sm:px-10">
+      <div className="w-full max-w-7xl">
+        <Hero />
       </div>
     </main>
   );
