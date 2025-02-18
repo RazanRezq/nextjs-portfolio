@@ -1,5 +1,6 @@
 import React from 'react';
-import { Spotlight } from './ui/Spotlight';
+import { Spotlight } from '../components/ui/Spotlight';
+import { TextGenerateEffect } from './ui/TextGenerateEffect';
 
 function Hero() {
   return (
@@ -16,7 +17,7 @@ function Hero() {
         <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" />
       </div>
 
-      <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black-100 dark:bg-grid-white/[0.3]">
+      <div className="absolute left-0 top-0 flex h-screen w-full items-center justify-center bg-white bg-grid-black/[0.2] dark:bg-black-100 dark:bg-grid-white/[0.03]">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100"></div>
       </div>
 
@@ -25,6 +26,13 @@ function Hero() {
           <h2 className="max-w-80 text-center text-xs uppercase tracking-widest text-blue-100">
             Dynamic Web Magic With Next.js 🪄
           </h2>
+          <TextGenerateEffect
+            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            words="Transforming Conceps into seamless Experiences "
+          />
+          <p className="lg:-text2xl mb-4 text-center text-sm md:text-lg md:tracking-wider">
+            Hi, i&apos;m Razan, a Next.js Developer based in Turkey
+          </p>
         </div>
       </div>
     </div>
