@@ -50,7 +50,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
   return (
     <div
       className={cn(
-        'group/bento relative row-span-1 flex flex-col justify-between space-y-4 rounded-3xl border border-transparent bg-white p-4 shadow-input transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none',
+        'group/bento relative row-span-1 flex flex-col justify-between space-y-4 rounded-3xl border-2 border-red-500 border-transparent bg-white p-4 shadow-input transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none',
         className
       )}
       style={{
@@ -59,7 +59,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
           'linear-gradient(90deg, rgba(2, 0, 36, 1)0%, rgba(59, 59, 68, 1)26%, rgba(93, 108, 111, 1) 100%)',
       }}
     >
-      <div className={`${id === 6} && flex h-full justify-center`}>
+      <div className={`${id === 6} && 'flex h-full justify-center`}>
         <div className="absolute h-full w-full">
           {img && (
             <img
