@@ -1,4 +1,6 @@
+import React from 'react';
 import { cn } from '@/lib/utils';
+import { BackgroundGradientAnimation } from './GradientBg';
 
 export const BentoGrid = ({
   className,
@@ -67,14 +69,37 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
             />
           )}
         </div>
-      </div>
-      <div className="transition duration-200 group-hover/bento:translate-x-2">
-        {icon}
-        <div className="mb-2 mt-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
-          {title}
+
+        <div
+          className={`absolute -bottom-5 right-0 ${id === 5 && 'w-full opacity-80'}`}
+        >
+          {spareImg && (
+            <img
+              src={spareImg}
+              alt={spareImg}
+              className={'object-cover, h-full w-full object-center'}
+            />
+          )}
         </div>
-        <div className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300">
-          {description}
+
+        {id === 6 && (
+          <BackgroundGradientAnimation>
+            <div className="absolute z-50 flex items-center justify-center font-bold text-white" />
+          </BackgroundGradientAnimation>
+        )}
+
+        <div
+          className={cn(
+            titleClassName,
+            'relative flex min-h-40 flex-col p-5 px-5 transition duration-200 group-hover/bento:translate-x-2 md:h-full lg:p-10'
+          )}
+        >
+          <div className="z-10 font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base">
+            {description}
+          </div>
+          <div className="lg:tet-3xl z-10 max-w-96 font-sans text-lg font-bold">
+            {title}
+          </div>
         </div>
       </div>
     </div>
