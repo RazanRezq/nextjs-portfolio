@@ -51,7 +51,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
   return (
     <div
       className={cn(
-        'group/bento relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border-2 border-red-500 border-transparent bg-white p-4 shadow-input transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none',
+        'group/bento relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white/[0.1] shadow-input transition duration-200 hover:shadow-xl dark:shadow-none',
         className
       )}
       style={{
@@ -101,9 +101,40 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
           <div className="lg:tet-3xl z-10 max-w-96 font-sans text-lg font-bold">
             {title}
           </div>
-        </div>
 
-        {id === 2 && <GlobeDemo />}
+          {id === 2 && <GlobeDemo />}
+          {id === 3 && (
+            <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
+              <div className="flex flex-col gap-3 lg:gap-8">
+                {['React.js', 'Next.js', 'Typescript'].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                  >
+                    {item}
+                  </span>
+                ))}
+                <span className="rounded-lg bg-[#10132e] px-3 py-4 text-center" />
+              </div>
+              <div className="flex flex-col gap-3 lg:gap-8">
+                <span className="rounded-lg bg-[#10132e] px-3 py-4 text-center" />
+                {['Tailwindcss', 'Docker', 'MongoDB'].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+          {id === 6 && (
+            <div className="relative mt-5">
+              <div className={`-botom-5 absolute right-0`}></div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
