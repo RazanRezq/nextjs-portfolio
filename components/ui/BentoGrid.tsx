@@ -1,7 +1,12 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import Lottie from 'lottie-react';
 import { cn } from '@/lib/utils';
 import { BackgroundGradientAnimation } from './GradientBg';
 import { GlobeDemo } from './GridGlobe';
+import animationData from '@/data/confetti.json';
+import { IoCopy, IoCopyOutline } from 'react-icons/io5';
+import MagicButton from './MagicButton';
 
 export const BentoGrid = ({
   className,
@@ -48,6 +53,23 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
   titleClassName,
   spareImg,
 }) => {
+  const [copied, setCopied] = useState(false);
+
+  // ✅ Fix: Define options object outside JSX
+  // const lottieOptions = {
+  //   loop: copied,
+  //   autoplay: copied,
+  //   animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: 'xMidYMid slice',
+  //   },
+  // };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('razan.rezzq@gmail.com');
+    setCopied(true);
+  };
+
   return (
     <div
       className={cn(
@@ -57,16 +79,16 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
       style={{
         background: 'rgb(2, 0, 36 )',
         backgroundColor:
-          'linear-gradient(90deg, rgba(2, 0, 36, 1)0%, rgba(59, 59, 68, 1)26%, rgba(93, 108, 111, 1) 100%)',
+          'linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(59, 59, 68, 1) 26%, rgba(93, 108, 111, 1) 100%)',
       }}
     >
-      <div className={`${id === 6} && 'flex h-full justify-center`}>
+      <div className={`${id === 6} && 'flex justify-center' h-full`}>
         <div className="absolute h-full w-full">
           {img && (
             <img
               src={img}
               alt={img}
-              className={cn(imgClassName, 'object-cover, object-center')}
+              className={cn(imgClassName, 'object-cover object-center')}
             />
           )}
         </div>
@@ -78,7 +100,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
             <img
               src={spareImg}
               alt={spareImg}
-              className={'object-cover, h-full w-full object-center'}
+              className="h-full w-full object-cover object-center"
             />
           )}
         </div>
@@ -98,7 +120,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
           <div className="z-10 font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base">
             {description}
           </div>
-          <div className="lg:tet-3xl z-10 max-w-96 font-sans text-lg font-bold">
+          <div className="z-10 max-w-96 font-sans text-lg font-bold lg:text-3xl">
             {title}
           </div>
 
@@ -131,7 +153,23 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
           )}
           {id === 6 && (
             <div className="relative mt-5">
-              <div className={`-botom-5 absolute right-0`}></div>
+              <div className="absolute -bottom-5 right-0">
+                <Lottie
+                  loop={copied}
+                  autoplay={copied}
+                  animationData={animationData}
+                  rendererSettings={{
+                    preserveAspectRatio: 'xMidYMid slice',
+                  }}
+                />
+              </div>
+              <MagicButton
+                title={copied ? 'Copied!' : 'Copy to clipboard'}
+                icon={<IoCopyOutline />}
+                position="left"
+                otherClasses="!bg-[#161a31]"
+                handleClick={handleCopy}
+              />
             </div>
           )}
         </div>
