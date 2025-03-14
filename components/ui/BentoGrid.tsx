@@ -82,7 +82,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
           'linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(59, 59, 68, 1) 26%, rgba(93, 108, 111, 1) 100%)',
       }}
     >
-      <div className={`${id === 6} && 'flex justify-center' h-full`}>
+      <div className={`${id === 6 && 'flex justify-center'} h-full`}>
         <div className="absolute h-full w-full">
           {img && (
             <img
@@ -164,7 +164,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
                 />
               </div>
               <MagicButton
-                title={copied ? 'Copied!' : 'Copy to clipboard'}
+                title={copied ? 'Email is Copied! ' : 'Copy my Email'}
                 icon={<IoCopyOutline />}
                 position="left"
                 otherClasses="!bg-[#161a31]"
