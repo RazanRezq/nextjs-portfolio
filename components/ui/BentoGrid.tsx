@@ -107,7 +107,7 @@ export const BentoGridItem: React.FC<BentoGridItemProps> = ({
 
         {id === 6 && (
           <BackgroundGradientAnimation>
-            <div className="absolute z-50 flex items-center justify-center font-bold text-white" />
+            {/* <div className="absolute z-50 flex items-center justify-center font-bold text-white" /> */}
           </BackgroundGradientAnimation>
         )}
         {/* Title and Description */}
