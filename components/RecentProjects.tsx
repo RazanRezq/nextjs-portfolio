@@ -1,5 +1,6 @@
 import React from 'react';
 import { projects } from '../data/index';
+import { PinContainer } from './ui/3d-pin';
 function RecentProjects() {
   return (
     <div className="py-20">
@@ -13,7 +14,7 @@ function RecentProjects() {
             key={id}
             className="flex h-[25rem] w-[80vw] items-center justify-center sm:w-96 lg:min-h-[32.5rem]"
           >
-            {title}
+            <PinContainer>{title}</PinContainer>
           </div>
         ))}
       </div>
