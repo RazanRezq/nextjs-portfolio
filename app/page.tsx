@@ -5,6 +5,7 @@ import Grid from '../components/Grid';
 import { BentoGrid } from '../components/ui/BentoGrid';
 import RecentProjects from '@/components/RecentProjects';
 import { navItems } from '@/data';
+import Clients from '@/components/Clients';
 export default function Home() {
   return (
     <main className="relative mx-auto flex flex-col items-center justify-center overflow-hidden bg-black-100 px-5 text-white sm:px-10">
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <Grid />
         <RecentProjects />
+        <Clients />
       </div>
     </main>
   );
