@@ -4,10 +4,9 @@ import { testimonials } from '@/data';
 
 function Clients() {
   return (
-    <div className="py-20" id="projects">
+    <section className="py-20" id="testimonials">
       <h1 className="heading">
-        Kind words from
-        <span className="text-purple">satisfied clients</span>
+        Kind words from <span className="text-purple">satisfied clients</span>
       </h1>
       <div className="flex flex-col items-center">
         <div className="relative flex h-[50vh] flex-col items-center overflow-hidden rounded-md antialiased md:h-[30rem]">
@@ -18,7 +17,7 @@ function Clients() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

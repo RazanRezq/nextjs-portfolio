@@ -73,7 +73,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        'scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+        'scroller relative z-20 w-screen overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
         className
       )}
     >
@@ -87,24 +87,35 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="relative w-[90vw] max-w-full shrink-0 rounded-2xl border border-b-0 border-slate-800 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] p-5 dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)] md:w-[60vw] md:p-16"
-            key={item.name}
+            className="relative w-[90vw] max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-800 p-5 md:w-[60vw] md:p-6"
+            key={idx}
+            style={{
+              background: 'rgb(4,7,29)',
+              backgroundColor:
+                'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
+            }}
           >
             <blockquote>
               <div
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-sm font-normal leading-[1.6] text-neutral-800 dark:text-gray-100">
+              <span className="relative z-20 text-lg font-normal leading-[1.6] text-white dark:text-gray-100">
                 {item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <span className="flex flex-col gap-1">
-                  <span className="text-sm font-normal leading-[1.6] text-neutral-500 dark:text-gray-400">
-                    {item.name}
-                  </span>
-                  <span className="text-sm font-normal leading-[1.6] text-neutral-500 dark:text-gray-400">
-                    {item.title}
+                  <div className="me-3">
+                    <img src="/profile.svg" alt="profile" />
+                  </div>
+
+                  <span className="flex flex-col gap-1">
+                    <span className="text-xl font-bold leading-[1.6] text-white dark:text-gray-400">
+                      {item.name}
+                    </span>
+                    <span className="text-sm font-normal leading-[1.6] text-white-200 dark:text-gray-400">
+                      {item.title}
+                    </span>
                   </span>
                 </span>
               </div>
